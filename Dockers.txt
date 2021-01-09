@@ -1,0 +1,13 @@
+RUNNING FROM DOCKER IMAGE
+
+STEPS:
+i.   pull image from docker hub repository
+ii.  create passfile (name sensitive)
+iii. copy the contents of /etc/shadow into passfile 
+iv.  pass the file to the docker container
+
+COMMANDS:
+i.   docker pull danzz0024511/work-repo:aos_project_base
+ii.  touch passfile
+iii. sudo cat /etc/shadow > passfile
+iv.  docker run -v /filesystem path/passfile:/code/passfile -it danzz0024511/work-repo:aos_project_base
